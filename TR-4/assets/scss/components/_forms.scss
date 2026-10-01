@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.contact-form {
+  display: grid;
+  gap: 17px;
+}
+
+.form-group {
+  display: grid;
+  gap: 7px;
+
+  label {
+    font-weight: 700;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid v.$border;
+    border-radius: v.$radius-sm;
+    padding: 12px 13px;
+    color: v.$text;
+    background: v.$surface-light;
+    font: inherit;
+
+    &:focus {
+      @include m.focus-ring;
+    }
+  }
+}
+
+.form-message {
+  min-height: 25px;
+  color: v.$accent;
+  font-size: 0.9rem;
+}

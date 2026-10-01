@@ -1,0 +1,92 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.skills-grid,
+.projects-grid,
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.achievement-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.skill-card p,
+.project-card p,
+.achievement-card p {
+  margin-top: 8px;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin-left: 10px;
+  padding-left: 30px;
+  border-left: 1px solid v.$border;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 40px 18px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: -37px;
+  top: 5px;
+  border-radius: 50%;
+  background: v.$accent;
+  box-shadow: 0 0 0 5px v.$bg;
+}
+
+.timeline-label {
+  margin-bottom: 5px;
+}
+
+.journey {
+  position: relative;
+  max-width: 850px;
+  margin-left: 10px;
+  padding-left: 32px;
+  border-left: 1px solid v.$border;
+}
+
+.journey-item {
+  position: relative;
+  padding: 0 0 40px 18px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  p:last-child {
+    margin-top: 5px;
+    color: v.$muted;
+  }
+}
+
+.journey-dot {
+  position: absolute;
+  left: -39px;
+  top: 5px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: v.$accent;
+  box-shadow: 0 0 0 6px v.$bg;
+}
+
+.journey-year {
+  color: v.$accent;
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 2px;
+}

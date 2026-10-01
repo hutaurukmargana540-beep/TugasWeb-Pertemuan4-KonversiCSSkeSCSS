@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.card,
+.skill-card,
+.project-card,
+.achievement-card,
+.contact-info,
+.contact-form {
+  @include m.card-surface;
+}
+
+.skill-card,
+.project-card,
+.achievement-card {
+  @include m.hover-lift;
+}
+
+.about-card,
+.quick-info,
+.contact-info,
+.contact-form {
+  padding: 28px;
+}
+
+.skill-icon {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  margin-bottom: 18px;
+  align-items: center;
+  justify-content: center;
+  border-radius: v.$radius-md;
+  color: #06251d;
+  background: v.$accent;
+  font-weight: 900;
+}
+
+.tag {
+  display: inline-block;
+  margin-top: v.$space-5;
+  padding: 4px 9px;
+  border-radius: 999px;
+  color: v.$accent;
+  background: rgba(110, 231, 183, 0.1);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.achievement-number {
+  display: block;
+  margin-bottom: 18px;
+  color: v.$accent;
+  font-weight: 800;
+}

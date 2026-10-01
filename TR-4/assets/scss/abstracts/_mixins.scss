@@ -1,0 +1,41 @@
+@use "variables" as v;
+
+// Mixin 1: container yang konsisten di seluruh halaman.
+@mixin container($width: v.$container-width) {
+  width: min($width, 92%);
+  margin-inline: auto;
+}
+
+// Mixin 2: surface/card reusable.
+@mixin card-surface($padding: v.$space-6) {
+  border: 1px solid v.$border;
+  border-radius: v.$radius-lg;
+  background: v.$surface;
+  box-shadow: v.$shadow;
+  padding: $padding;
+}
+
+// Mixin 3: efek hover reusable.
+@mixin hover-lift($distance: 5px) {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-$distance);
+    border-color: rgba(110, 231, 183, 0.45);
+  }
+}
+
+// Mixin 4: focus yang accessible.
+@mixin focus-ring {
+  outline: 2px solid v.$accent;
+  outline-offset: 1px;
+}
+
+// Mixin 5: breakpoint reusable.
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: v.$tablet) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: v.$mobile) { @content; }
+  }
+}

@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as v;
+
+.site-footer {
+  width: 100%;
+  padding: 28px 4%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  color: v.$muted;
+  border-top: 1px solid v.$border;
+  background: #080d18;
+
+  a {
+    color: v.$accent;
+    text-decoration: none;
+  }
+}
+
+.contact-list {
+  list-style: none;
+  margin-top: 24px;
+
+  li {
+    padding: 14px 0;
+    border-bottom: 1px solid v.$border;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  a {
+    color: v.$accent;
+    overflow-wrap: anywhere;
+  }
+}

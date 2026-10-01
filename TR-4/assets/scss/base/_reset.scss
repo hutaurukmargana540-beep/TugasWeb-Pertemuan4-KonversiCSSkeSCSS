@@ -1,0 +1,35 @@
+@use "../abstracts/variables" as v;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: v.$text;
+  background:
+    radial-gradient(circle at 85% 5%, rgba(110, 231, 183, 0.12), transparent 28rem),
+    v.$bg;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+}

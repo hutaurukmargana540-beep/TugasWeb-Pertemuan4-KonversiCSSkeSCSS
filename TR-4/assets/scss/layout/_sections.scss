@@ -1,0 +1,87 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.section {
+  @include m.container;
+  padding: v.$space-10 0;
+  scroll-margin-top: 74px;
+}
+
+.alt-section {
+  width: 100%;
+  padding-left: max(4%, calc((100% - #{v.$container-width}) / 2));
+  padding-right: max(4%, calc((100% - #{v.$container-width}) / 2));
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.section-heading {
+  margin-bottom: 34px;
+}
+
+.about-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: v.$space-6;
+}
+
+.about-card p + p {
+  margin-top: 15px;
+}
+
+.about-card p,
+.quick-info dd,
+.project-card p,
+.achievement-card p,
+.contact-info p {
+  color: v.$muted;
+}
+
+.quick-info {
+  dl {
+    margin-top: 18px;
+
+    > div {
+      padding: 12px 0;
+      border-bottom: 1px solid v.$border;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  dt {
+    color: v.$muted;
+    font-size: 0.82rem;
+  }
+
+  dd {
+    margin-top: 2px;
+    color: v.$text;
+  }
+}
+
+.stats {
+  @include m.container;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+
+  > div {
+    @include m.card-surface(20px);
+    text-align: center;
+  }
+
+  strong {
+    display: block;
+    color: v.$accent;
+    font-size: 2rem;
+  }
+
+  span {
+    color: v.$muted;
+    font-size: 0.82rem;
+  }
+}

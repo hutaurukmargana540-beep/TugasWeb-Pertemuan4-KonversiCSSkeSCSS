@@ -1,0 +1,63 @@
+// Design tokens disimpan sebagai Sass variables dan CSS custom properties.
+// CSS custom properties memungkinkan theme switch JavaScript tetap bekerja.
+$colors: (
+  "bg": #0b1120,
+  "surface": #111a2e,
+  "surface-light": #17223a,
+  "text": #eef4ff,
+  "muted": #aab7cc,
+  "accent": #6ee7b7,
+  "accent-dark": #0f766e,
+  "border": rgba(255, 255, 255, 0.1)
+);
+
+$bg-value: map-get($colors, "bg");
+$surface-value: map-get($colors, "surface");
+$surface-light-value: map-get($colors, "surface-light");
+$text-value: map-get($colors, "text");
+$muted-value: map-get($colors, "muted");
+$accent-value: map-get($colors, "accent");
+$accent-dark-value: map-get($colors, "accent-dark");
+$border-value: map-get($colors, "border");
+
+:root {
+  --bg: #{$bg-value};
+  --surface: #{$surface-value};
+  --surface-light: #{$surface-light-value};
+  --text: #{$text-value};
+  --muted: #{$muted-value};
+  --accent: #{$accent-value};
+  --accent-dark: #{$accent-dark-value};
+  --border: #{$border-value};
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+$bg: var(--bg);
+$surface: var(--surface);
+$surface-light: var(--surface-light);
+$text: var(--text);
+$muted: var(--muted);
+$accent: var(--accent);
+$accent-dark: var(--accent-dark);
+$border: var(--border);
+$shadow: var(--shadow);
+
+$space-1: 4px;
+$space-2: 8px;
+$space-3: 12px;
+$space-4: 16px;
+$space-5: 20px;
+$space-6: 24px;
+$space-7: 32px;
+$space-8: 48px;
+$space-9: 60px;
+$space-10: 90px;
+
+$radius-sm: 10px;
+$radius-md: 12px;
+$radius-lg: 18px;
+$radius-xl: 24px;
+
+$container-width: 1120px;
+$mobile: 560px;
+$tablet: 850px;

@@ -1,0 +1,16 @@
+{
+  "name": "hardiman-portfolio-scss",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "sass assets/scss/main.scss style.css --style=expanded && vite build",
+    "sass": "sass assets/scss/main.scss style.css --style=expanded",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2",
+    "vite": "^7.1.7"
+  }
+}

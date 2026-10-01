@@ -1,0 +1,95 @@
+// Entry point SCSS.
+// Dart Sass modern menggunakan @use untuk modularisasi.
+@use "abstracts/variables";
+@use "abstracts/mixins";
+@use "base/reset";
+@use "base/typography";
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+@use "layout/header";
+@use "layout/hero";
+@use "layout/sections";
+@use "layout/grid";
+@use "layout/footer";
+@use "pages/home";
+@use "themes/theme";
+@use "vendors/normalize";
+
+// Responsive rules terletak di entry point agar breakpoint seluruh halaman konsisten.
+@use "abstracts/variables" as v;
+@use "abstracts/mixins" as m;
+
+@include m.respond-to(tablet) {
+  .navbar {
+    padding: 15px 0;
+    align-items: flex-start;
+  }
+
+  .nav-list {
+    gap: 8px 14px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 65px;
+  }
+
+  .profile-card {
+    order: -1;
+    transform: none;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .theme-toggle {
+    margin-left: 0;
+  }
+}
+
+@include m.respond-to(mobile) {
+  .navbar {
+    display: block;
+  }
+
+  .nav-list {
+    margin-top: 12px;
+    justify-content: flex-start;
+  }
+
+  h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .hero,
+  .section {
+    padding-top: v.$space-7;
+    padding-bottom: v.$space-7;
+  }
+
+  .skills-grid,
+  .projects-grid,
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .goal-card {
+    padding: 32px 20px;
+  }
+}

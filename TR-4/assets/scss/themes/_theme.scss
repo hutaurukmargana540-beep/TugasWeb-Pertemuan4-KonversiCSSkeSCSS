@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as v;
+
+// @each memenuhi requirement loop Sass dan menghasilkan utility warna.
+$theme-colors: (
+  "accent": v.$accent,
+  "muted": v.$muted,
+  "surface": v.$surface
+);
+
+@each $name, $color in $theme-colors {
+  .text-#{$name} {
+    color: $color;
+  }
+}
+
+body.light {
+  --bg: #f4f7fb;
+  --surface: #fff;
+  --surface-light: #eef3f8;
+  --text: #152033;
+  --muted: #5d6c80;
+  --accent: #087f62;
+  --border: rgba(20, 32, 51, 0.12);
+  --shadow: 0 18px 50px rgba(30, 50, 80, 0.10);
+}

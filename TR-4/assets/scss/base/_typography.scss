@@ -1,0 +1,44 @@
+@use "../abstracts/variables" as v;
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  max-width: 800px;
+  margin: v.$space-3 0 v.$space-5;
+  font-size: clamp(2.7rem, 7vw, 5.4rem);
+  letter-spacing: -3px;
+}
+
+h2 {
+  margin-top: 4px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+.eyebrow,
+.section-number,
+.timeline-label,
+.project-number {
+  color: v.$accent;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero-text {
+  max-width: 650px;
+  color: v.$muted;
+  font-size: 1.1rem;
+}
+
+.section-intro {
+  margin-top: 7px;
+  color: v.$muted;
+}
